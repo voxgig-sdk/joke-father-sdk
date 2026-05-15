@@ -1,0 +1,116 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Joke Father",
+    "description": "Joke Father provides a fun collection of dad jokes that are bound to elicit groans and laughter. Users can easily request a new joke with a simple button click or by pressing 'Return'.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://jokefather.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://jokefather.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/joke": {
+      "get": {
+        "summary": "Get a random dad joke",
+        "description": "Returns a random dad joke from the collection",
+        "operationId": "getRandomJoke",
+        "tags": [
+          "Jokes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved a random joke",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Joke"
+                },
+                "examples": {
+                  "joke": {
+                    "value": {
+                      "id": "01JN5DCA8DDRQGW2MZ8DCEPHYE",
+                      "joke": "Why don't scientists trust atoms? Because they make up everything!",
+                      "setup": "Why don't scientists trust atoms?",
+                      "punchline": "Because they make up everything!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Joke": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the joke",
+            "example": "01JN5DCA8DDRQGW2MZ8DCEPHYE"
+          },
+          "joke": {
+            "type": "string",
+            "description": "The complete joke text",
+            "example": "Why don't scientists trust atoms? Because they make up everything!"
+          },
+          "setup": {
+            "type": "string",
+            "description": "The setup/question part of the joke",
+            "example": "Why don't scientists trust atoms?"
+          },
+          "punchline": {
+            "type": "string",
+            "description": "The punchline/answer part of the joke",
+            "example": "Because they make up everything!"
+          }
+        },
+        "required": [
+          "id",
+          "joke"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Jokes",
+      "description": "Operations related to retrieving dad jokes"
+    }
+  ]
+}

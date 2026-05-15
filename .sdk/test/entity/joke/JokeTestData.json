@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "joke": {
+      "JOKE00": {
+        "id": "JOKE00",
+        "joke": "s29",
+        "punchline": "s2a",
+        "setup": "s2b"
+      },
+      "JOKE01": {
+        "id": "JOKE01",
+        "joke": "s51",
+        "punchline": "s52",
+        "setup": "s53"
+      },
+      "JOKE02": {
+        "id": "JOKE02",
+        "joke": "s79",
+        "punchline": "s7a",
+        "setup": "s7b"
+      }
+    }
+  },
+  "new": {
+    "joke": {
+      "joke_ref01": {
+        "joke": "sa1",
+        "punchline": "sa2",
+        "setup": "sa3"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://jokefather.com"
+      }
+      description: "Joke Father provides a fun collection of dad jokes that are bound to elicit groans and laughter. Users can easily request a new joke with a simple button click or by pressing 'Return'."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://jokefather.com"
+        }
+      ]
+      title: "Joke Father"
+      version: "1.0.0"
+    }
+  }
+}
+
+}
