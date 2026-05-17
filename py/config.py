@@ -64,18 +64,21 @@ def make_config():
             "points": [
               {
                 "method": "GET",
-                "orig": "/api/joke",
+                "orig": "/api/jokes/random",
                 "parts": [
                   "api",
-                  "joke",
+                  "jokes",
+                  "random",
                 ],
+                "select": {
+                  "$action": "random",
+                },
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
                 "active": True,
                 "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],

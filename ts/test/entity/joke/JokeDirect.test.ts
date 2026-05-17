@@ -41,7 +41,7 @@ describe('JokeDirect', async () => {
 
 
     const result: any = await client.direct({
-      path: 'api/joke',
+      path: 'api/jokes/random',
       method: 'GET',
       params,
       query,

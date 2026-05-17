@@ -231,7 +231,7 @@ On error, `"ok"` is `false` and `"err"` contains the error value.
 
 Operations: Load.
 
-API path: `/api/joke`
+API path: `/api/jokes/random`
 
 
 

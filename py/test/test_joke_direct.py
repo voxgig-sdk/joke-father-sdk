@@ -22,7 +22,7 @@ class TestJokeDirect:
 
 
         result, err = client.direct({
-            "path": "api/joke",
+            "path": "api/jokes/random",
             "method": "GET",
             "params": {},
         })

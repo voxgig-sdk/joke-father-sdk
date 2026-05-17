@@ -11,7 +11,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Joke** |  | `/api/joke` |
+| **Joke** |  | `/api/jokes/random` |
 
 Each entity supports the following operations where available: **load**, **list**, **create**,
 **update**, and **remove**.

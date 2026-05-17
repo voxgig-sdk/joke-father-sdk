@@ -63,10 +63,14 @@ local function make_config()
             ["points"] = {
               {
                 ["method"] = "GET",
-                ["orig"] = "/api/joke",
+                ["orig"] = "/api/jokes/random",
                 ["parts"] = {
                   "api",
-                  "joke",
+                  "jokes",
+                  "random",
+                },
+                ["select"] = {
+                  ["$action"] = "random",
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
@@ -74,7 +78,6 @@ local function make_config()
                 },
                 ["active"] = true,
                 ["args"] = {},
-                ["select"] = {},
                 ["index$"] = 0,
               },
             },

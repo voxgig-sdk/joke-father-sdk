@@ -28,7 +28,7 @@ func TestJokeDirect(t *testing.T) {
 
 
 		result, err := client.Direct(map[string]any{
-			"path":   "api/joke",
+			"path":   "api/jokes/random",
 			"method": "GET",
 			"params": map[string]any{},
 		})

@@ -6,7 +6,8 @@ guide: {
   metrics: count: method: 1
 
   entity: joke: {
-    path: "/api/joke": {
+    path: "/api/jokes/random": {
+      action: "random": {}
       op: load: method: *GET
       op: load: transform: res: *("`body.joke`")|top
     }

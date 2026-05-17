@@ -18,7 +18,7 @@ describe("JokeDirect", function()
 
 
     local result, err = client:direct({
-      path = "api/joke",
+      path = "api/jokes/random",
       method = "GET",
       params = {},
     })

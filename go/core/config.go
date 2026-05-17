@@ -63,10 +63,14 @@ func MakeConfig() map[string]any {
 						"points": []any{
 							map[string]any{
 								"method": "GET",
-								"orig": "/api/joke",
+								"orig": "/api/jokes/random",
 								"parts": []any{
 									"api",
-									"joke",
+									"jokes",
+									"random",
+								},
+								"select": map[string]any{
+									"$action": "random",
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
@@ -74,7 +78,6 @@ func MakeConfig() map[string]any {
 								},
 								"active": true,
 								"args": map[string]any{},
-								"select": map[string]any{},
 								"index$": 0,
 							},
 						},

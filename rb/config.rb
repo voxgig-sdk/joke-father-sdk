@@ -64,18 +64,21 @@ module JokeFatherConfig
               "points" => [
                 {
                   "method" => "GET",
-                  "orig" => "/api/joke",
+                  "orig" => "/api/jokes/random",
                   "parts" => [
                     "api",
-                    "joke",
+                    "jokes",
+                    "random",
                   ],
+                  "select" => {
+                    "$action" => "random",
+                  },
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
                   "active" => true,
                   "args" => {},
-                  "select" => {},
                   "index$" => 0,
                 },
               ],

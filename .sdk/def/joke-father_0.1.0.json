@@ -15,7 +15,7 @@
     }
   ],
   "paths": {
-    "/api/joke": {
+    "/api/jokes/random": {
       "get": {
         "summary": "Get a random dad joke",
         "description": "Returns a random dad joke from the collection",

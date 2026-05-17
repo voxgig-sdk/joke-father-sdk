@@ -255,7 +255,7 @@ The `prepare()` method returns:
 
 Operations: load.
 
-API path: `/api/joke`
+API path: `/api/jokes/random`
 
 
 
