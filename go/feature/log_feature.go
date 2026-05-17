@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/joke-father-sdk/core"
+	"github.com/voxgig-sdk/joke-father-sdk/go/core"
 )
 
 type LogFeature struct {

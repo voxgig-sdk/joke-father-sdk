@@ -1,10 +1,10 @@
 package voxgigjokefathersdk
 
 import (
-	"github.com/voxgig-sdk/joke-father-sdk/core"
-	"github.com/voxgig-sdk/joke-father-sdk/entity"
-	"github.com/voxgig-sdk/joke-father-sdk/feature"
-	_ "github.com/voxgig-sdk/joke-father-sdk/utility"
+	"github.com/voxgig-sdk/joke-father-sdk/go/core"
+	"github.com/voxgig-sdk/joke-father-sdk/go/entity"
+	"github.com/voxgig-sdk/joke-father-sdk/go/feature"
+	_ "github.com/voxgig-sdk/joke-father-sdk/go/utility"
 )
 
 // Type aliases preserve external API.
