@@ -59,14 +59,12 @@ def _joke_direct_setup(mockres):
     env = runner.env_override({
         "JOKEFATHER_TEST_JOKE_ENTID": {},
         "JOKEFATHER_TEST_LIVE": "FALSE",
-        "JOKEFATHER_APIKEY": "NONE",
     })
 
     live = env.get("JOKEFATHER_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("JOKEFATHER_APIKEY"),
         }
         client = JokeFatherSDK(merged_opts)
         return {

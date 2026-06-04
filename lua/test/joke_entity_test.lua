@@ -95,7 +95,6 @@ function joke_basic_setup(extra)
     ["JOKEFATHER_TEST_JOKE_ENTID"] = idmap,
     ["JOKEFATHER_TEST_LIVE"] = "FALSE",
     ["JOKEFATHER_TEST_EXPLAIN"] = "FALSE",
-    ["JOKEFATHER_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -107,7 +106,6 @@ function joke_basic_setup(extra)
   if env["JOKEFATHER_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["JOKEFATHER_APIKEY"],
       },
       extra or {},
     })
