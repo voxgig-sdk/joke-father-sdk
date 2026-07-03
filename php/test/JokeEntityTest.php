@@ -89,6 +89,7 @@ function joke_basic_setup($extra)
         "JOKEFATHER_TEST_JOKE_ENTID" => $idmap,
         "JOKEFATHER_TEST_LIVE" => "FALSE",
         "JOKEFATHER_TEST_EXPLAIN" => "FALSE",
+        "JOKEFATHER_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -100,6 +101,7 @@ function joke_basic_setup($extra)
     if ($env["JOKEFATHER_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["JOKEFATHER_APIKEY"],
             ],
             $extra ?? [],
         ]);

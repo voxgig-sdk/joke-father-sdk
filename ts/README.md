@@ -1,6 +1,11 @@
 # JokeFather TypeScript SDK
 
-The TypeScript SDK for the JokeFather API. Provides a type-safe, entity-oriented interface with full async/await support.
+
+
+The TypeScript SDK for the JokeFather API — a type-safe, entity-oriented client with full async/await support.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -17,7 +22,9 @@ loading a specific record.
 ```ts
 import { JokeFatherSDK } from 'joke-father'
 
-const client = new JokeFatherSDK({})
+const client = new JokeFatherSDK({
+  apikey: process.env.JOKE-FATHER_APIKEY,
+})
 ```
 
 ### 3. Load a joke
@@ -80,7 +87,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new JokeFatherSDK()
+const client = new JokeFatherSDK({ apikey: '...' })
 const testClient = client.tester()
 ```
 
@@ -116,6 +123,7 @@ const logger = {
 }
 
 const client = new JokeFatherSDK({
+  apikey: '...',
   extend: [logger],
 })
 ```
@@ -126,6 +134,7 @@ Create a `.env.local` file at the project root:
 
 ```
 JOKE-FATHER_TEST_LIVE=TRUE
+JOKE-FATHER_APIKEY=<your-key>
 ```
 
 Then run:
@@ -143,6 +152,7 @@ cd ts && npm test
 
 ```ts
 new JokeFatherSDK(options?: {
+  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -153,6 +163,7 @@ new JokeFatherSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

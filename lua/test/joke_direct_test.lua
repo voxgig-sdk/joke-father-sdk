@@ -62,12 +62,14 @@ function joke_direct_setup(mockres)
   local env = runner.env_override({
     ["JOKEFATHER_TEST_JOKE_ENTID"] = {},
     ["JOKEFATHER_TEST_LIVE"] = "FALSE",
+    ["JOKEFATHER_APIKEY"] = "NONE",
   })
 
   local live = env["JOKEFATHER_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["JOKEFATHER_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

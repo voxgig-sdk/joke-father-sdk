@@ -38,6 +38,10 @@ class Config {
   options = {
     base: 'https://jokefather.com',
 
+    auth: {
+      prefix: 'Bearer',
+    },
+
     headers: {
       "content-type": "application/json"
     },
@@ -55,40 +59,43 @@ class Config {
     "joke": {
       "fields": [
         {
+          "active": true,
           "name": "id",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "joke",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "punchline",
           "req": false,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "setup",
           "req": false,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         }
       ],
       "name": "joke",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/api/jokes/random",
               "parts": [
@@ -101,14 +108,11 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.joke`"
               },
-              "active": true,
-              "args": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },

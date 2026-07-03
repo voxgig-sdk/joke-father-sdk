@@ -1,18 +1,8 @@
 # JokeFather SDK
 
-Serve up dad jokes from a small, no-auth API that returns a random groan-worthy one-liner
+Joke Father client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Joke Father
-
-[Joke Father](https://jokefather.com) is a small public API that hands back dad jokes — the kind written to provoke groans as much as laughter. The site is a consumer-facing joke viewer ("Made with love in Jersey City") with a thin HTTP API behind it that anyone can call.
-
-What you get from the API:
-- A random dad joke on demand via `GET /api/jokes/random`
-- Plain joke text suitable for chat bots, status pages, screensavers, or quick novelty integrations
-
-Operational notes: the API is unauthenticated and free to call. The freepublicapis.com listing notes that CORS is not enabled, so browser-side calls from another origin may need a server-side proxy. No rate limits are published, so be polite with request volume.
 
 ## Try it
 
@@ -46,27 +36,31 @@ gem install joke-father-sdk
 luarocks install joke-father-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { JokeFatherSDK } from 'joke-father'
 
-const client = new JokeFatherSDK({})
+const client = new JokeFatherSDK({
+  apikey: process.env.JOKE-FATHER_APIKEY,
+})
 
+// Load joke data
+const joke = await client.Joke().load({})
+console.log(joke.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -96,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Joke** | A single dad joke, fetched one at a time from `GET /api/jokes/random`. | `/api/jokes/random` |
+| **Joke** |  | `/api/jokes/random` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -106,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from jokefather_sdk import JokeFatherSDK
 
-client = JokeFatherSDK({})
+client = JokeFatherSDK({
+    "apikey": os.environ.get("JOKE-FATHER_APIKEY"),
+})
 
 
 # Load a specific joke
-joke, err = client.Joke(None).load(
-    {"id": "example_id"}, None
-)
+joke, err = client.Joke().load({"id": "example_id"})
+print(joke)
 ```
 
 ### PHP
@@ -123,13 +119,14 @@ joke, err = client.Joke(None).load(
 <?php
 require_once 'jokefather_sdk.php';
 
-$client = new JokeFatherSDK([]);
+$client = new JokeFatherSDK([
+    "apikey" => getenv("JOKE-FATHER_APIKEY"),
+]);
 
 
 // Load a specific joke
-[$joke, $err] = $client->Joke(null)->load(
-    ["id" => "example_id"], null
-);
+[$joke, $err] = $client->Joke()->load(["id" => "example_id"]);
+print_r($joke);
 ```
 
 ### Golang
@@ -137,8 +134,13 @@ $client = new JokeFatherSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/joke-father-sdk/go"
 
-client := sdk.NewJokeFatherSDK(map[string]any{})
+client := sdk.NewJokeFatherSDK(map[string]any{
+    "apikey": os.Getenv("JOKE-FATHER_APIKEY"),
+})
 
+// Load joke data
+joke, err := client.Joke(nil).Load(map[string]any{}, nil)
+fmt.Println(joke)
 ```
 
 ### Ruby
@@ -146,13 +148,14 @@ client := sdk.NewJokeFatherSDK(map[string]any{})
 ```ruby
 require_relative "JokeFather_sdk"
 
-client = JokeFatherSDK.new({})
+client = JokeFatherSDK.new({
+  "apikey" => ENV["JOKE-FATHER_APIKEY"],
+})
 
 
 # Load a specific joke
-joke, err = client.Joke(nil).load(
-  { "id" => "example_id" }, nil
-)
+joke, err = client.Joke().load({ "id" => "example_id" })
+puts joke
 ```
 
 ### Lua
@@ -160,13 +163,14 @@ joke, err = client.Joke(nil).load(
 ```lua
 local sdk = require("joke-father_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("JOKE-FATHER_APIKEY"),
+})
 
 
 -- Load a specific joke
-local joke, err = client:Joke(nil):load(
-  { id = "example_id" }, nil
-)
+local joke, err = client:Joke():load({ id = "example_id" })
+print(joke)
 ```
 
 ## Unit testing in offline mode
@@ -185,25 +189,21 @@ const result = await client.Joke().load({ id: 'test01' })
 ### Python
 
 ```python
-client = JokeFatherSDK.test(None, None)
-result, err = client.Joke(None).load(
-    {"id": "test01"}, None
-)
+client = JokeFatherSDK.test()
+result, err = client.Joke().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = JokeFatherSDK::test(null, null);
-[$result, $err] = $client->Joke(null)->load(
-    ["id" => "test01"], null
-);
+$client = JokeFatherSDK::test();
+[$result, $err] = $client->Joke()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Joke(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -212,19 +212,15 @@ result, err := client.Joke(nil).Load(
 ### Ruby
 
 ```ruby
-client = JokeFatherSDK.test(nil, nil)
-result, err = client.Joke(nil).load(
-  { "id" => "test01" }, nil
-)
+client = JokeFatherSDK.test
+result, err = client.Joke().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Joke(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Joke():load({ id = "test01" })
 ```
 
 ## How it works
@@ -328,14 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Joke Father
-
-- Upstream: [https://jokefather.com](https://jokefather.com)
-
-- No licence is published on the Joke Father site or its freepublicapis.com listing
-- Treat returned joke text as the work of its original authors; attribute Joke Father when republishing
-- Confirm permitted use with the operator before commercial redistribution
 
 ---
 

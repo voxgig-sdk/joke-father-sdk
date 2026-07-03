@@ -114,6 +114,7 @@ function basicSetup(extra?: any) {
     'JOKE_FATHER_TEST_JOKE_ENTID': idmap,
     'JOKE_FATHER_TEST_LIVE': 'FALSE',
     'JOKE_FATHER_TEST_EXPLAIN': 'FALSE',
+    'JOKE_FATHER_APIKEY': 'NONE',
   })
 
   idmap = env['JOKE_FATHER_TEST_JOKE_ENTID']
@@ -123,6 +124,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new JokeFatherSDK(merge([
       {
+        apikey: env.JOKE_FATHER_APIKEY,
       },
       extra
     ]))

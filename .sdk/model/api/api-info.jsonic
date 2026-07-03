@@ -16,22 +16,7 @@ main: {
       ]
       title: "Joke Father"
       version: "1.0.0"
-      tagline: "Serve up dad jokes from a small, no-auth API that returns a random groan-worthy one-liner"
-      homepage: "https://jokefather.com"
-      license_md: `- No licence is published on the Joke Father site or its freepublicapis.com listing
-- Treat returned joke text as the work of its original authors; attribute Joke Father when republishing
-- Confirm permitted use with the operator before commercial redistribution`
-      about_md: `[Joke Father](https://jokefather.com) is a small public API that hands back dad jokes — the kind written to provoke groans as much as laughter. The site is a consumer-facing joke viewer ("Made with love in Jersey City") with a thin HTTP API behind it that anyone can call.
-
-What you get from the API:
-- A random dad joke on demand via \`GET /api/jokes/random\`
-- Plain joke text suitable for chat bots, status pages, screensavers, or quick novelty integrations
-
-Operational notes: the API is unauthenticated and free to call. The freepublicapis.com listing notes that CORS is not enabled, so browser-side calls from another origin may need a server-side proxy. No rate limits are published, so be polite with request volume.`
-      entity_desc: {
-        joke: "A single dad joke, fetched one at a time from `GET /api/jokes/random`."
-      }
-      auth: false
     }
   }
 }
+
