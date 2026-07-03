@@ -8,12 +8,14 @@ source = {
   dir = "joke-father-sdk/lua"
 }
 description = {
-  summary = "JokeFather SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Joke Father public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/joke-father-sdk",
+  issues_url = "https://github.com/voxgig-sdk/joke-father-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "joke-father" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

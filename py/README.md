@@ -10,7 +10,7 @@ The Python SDK for the JokeFather API — an entity-oriented client following Py
 
 ## Install
 ```bash
-pip install joke-father-sdk
+pip install voxgig-sdk-joke-father
 ```
 
 Or install from source:

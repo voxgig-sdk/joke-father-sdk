@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/joke-father",
-  "description": "JokeFather SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the Joke Father public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "joke-father"],
+  "homepage": "https://github.com/voxgig-sdk/joke-father-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/joke-father-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/joke-father-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"

@@ -10,7 +10,7 @@ The TypeScript SDK for the JokeFather API — a type-safe, entity-oriented clien
 
 ## Install
 ```bash
-npm install joke-father
+npm install @voxgig-sdk/joke-father
 ```
 ## Tutorial: your first API call
 

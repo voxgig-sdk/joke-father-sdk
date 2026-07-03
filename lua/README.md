@@ -10,7 +10,7 @@ The Lua SDK for the JokeFather API — an entity-oriented client using Lua conve
 
 ## Install
 ```bash
-luarocks install joke-father-sdk
+luarocks install voxgig-sdk-joke-father
 ```
 
 If the module is not yet published, add the source directory to

@@ -10,13 +10,13 @@ The Ruby SDK for the JokeFather API — an entity-oriented client using idiomati
 
 ## Install
 ```bash
-gem install joke-father-sdk
+gem install voxgig-sdk-joke-father
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "joke-father-sdk"
+gem "voxgig-sdk-joke-father"
 ```
 
 Then run:

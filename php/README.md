@@ -10,7 +10,7 @@ The PHP SDK for the JokeFather API — an entity-oriented client using PHP conve
 
 ## Install
 ```bash
-composer require voxgig/joke-father-sdk
+composer require voxgig-sdk/joke-father
 ```
 
 
