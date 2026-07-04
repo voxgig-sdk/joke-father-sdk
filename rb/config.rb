@@ -75,7 +75,7 @@ module JokeFatherConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body.joke`",
+                    "res" => "`body`",
                   },
                   "index$" => 0,
                 },

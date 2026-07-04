@@ -26,9 +26,9 @@ import { JokeFatherSDK } from '@voxgig-sdk/joke-father'
 
 const client = new JokeFatherSDK()
 
-// Load joke data
-const joke = await client.joke.load({})
-console.log(joke.data)
+// Load joke data (returns a Joke)
+const joke = await client.Joke().load()
+console.log(joke)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from jokefather_sdk import JokeFatherSDK
 client = JokeFatherSDK()
 
 
-# Load a specific joke
-joke = client.joke.load({"id": "example_id"})
+# Load a specific joke (returns the record, raises on error)
+joke = client.Joke().load({"id": "example_id"})
 print(joke)
 ```
 
@@ -98,8 +98,8 @@ require_once 'jokefather_sdk.php';
 $client = new JokeFatherSDK();
 
 
-// Load a specific joke
-$joke = $client->joke()->load(["id" => "example_id"]);
+// Load a specific joke (returns the bare record; throws on error)
+$joke = $client->Joke()->load(["id" => "example_id"]);
 print_r($joke);
 ```
 
@@ -123,8 +123,8 @@ require_relative "JokeFather_sdk"
 client = JokeFatherSDK.new
 
 
-# Load a specific joke
-joke = client.joke.load({ "id" => "example_id" })
+# Load a specific joke (returns the bare record; raises on error)
+joke = client.Joke.load({ "id" => "example_id" })
 puts joke
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific joke
-local joke, err = client:joke():load({ id = "example_id" })
+local joke, err = client:Joke():load({ id = "example_id" })
 print(joke)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = JokeFatherSDK.test()
-const result = await client.joke.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const joke = await client.Joke().load({ id: 'test01' })
+// joke is a bare Joke populated with mock data
+console.log(joke)
 ```
 
 ### Python
 
 ```python
 client = JokeFatherSDK.test()
-result = client.joke.load({"id": "test01"})
+joke = client.Joke().load({"id": "test01"})
+print(joke)
 ```
 
 ### PHP
 
 ```php
-$client = JokeFatherSDK::test();
-$result = $client->joke()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = JokeFatherSDK::test([
+    "entity" => ["joke" => ["test01" => ["id" => "test01"]]],
+]);
+$joke = $client->Joke()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.Joke(nil).Load(
 ### Ruby
 
 ```ruby
-client = JokeFatherSDK.test
-result = client.joke.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = JokeFatherSDK.test({
+  "entity" => { "joke" => { "test01" => { "id" => "test01" } } },
+})
+joke = client.Joke.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:joke():load({ id = "test01" })
+local result, err = client:Joke():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:joke():list() / client:joke():load({ id = ... })
-function JokeFatherSDK:joke(data)
+-- Idiomatic facade: client:Joke():list() / client:Joke():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function JokeFatherSDK:Joke(data)
   local EntityMod = require("entity.joke_entity")
   if data == nil then
     if self._joke == nil then
@@ -253,12 +254,6 @@ function JokeFatherSDK:joke(data)
     end
     return self._joke
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:joke() instead.
-function JokeFatherSDK:Joke(data)
-  local EntityMod = require("entity.joke_entity")
   return EntityMod.new(self, data)
 end
 

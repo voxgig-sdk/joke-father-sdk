@@ -50,7 +50,7 @@ main: kit: entity: joke: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body.joke`"
+            res: "`body`"
           }
         }
       ]
