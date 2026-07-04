@@ -20,9 +20,6 @@ class JokeFatherConfig
             ],
             "options" => [
                 "base" => "https://jokefather.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

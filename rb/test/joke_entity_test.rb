@@ -44,8 +44,7 @@ class JokeEntityTest < Minitest::Test
     joke_ref01_match_dt0 = {
       "id" => joke_ref01_data["id"],
     }
-    joke_ref01_data_dt0_loaded, err = joke_ref01_ent.load(joke_ref01_match_dt0, nil)
-    assert_nil err
+    joke_ref01_data_dt0_loaded = joke_ref01_ent.load(joke_ref01_match_dt0, nil)
     joke_ref01_data_dt0_load_result = Helpers.to_map(joke_ref01_data_dt0_loaded)
     assert !joke_ref01_data_dt0_load_result.nil?
     assert_equal joke_ref01_data_dt0_load_result["id"], joke_ref01_data["id"]
@@ -86,7 +85,6 @@ def joke_basic_setup(extra)
     "JOKEFATHER_TEST_JOKE_ENTID" => idmap,
     "JOKEFATHER_TEST_LIVE" => "FALSE",
     "JOKEFATHER_TEST_EXPLAIN" => "FALSE",
-    "JOKEFATHER_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -98,7 +96,6 @@ def joke_basic_setup(extra)
   if env["JOKEFATHER_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JOKEFATHER_APIKEY"],
       },
       extra || {},
     ])
