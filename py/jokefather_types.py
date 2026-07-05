@@ -26,8 +26,11 @@ class Joke(JokeRequired, total=False):
     setup: str
 
 
-class JokeLoadMatch(TypedDict, total=False):
+class JokeLoadMatchRequired(TypedDict):
     id: str
+
+
+class JokeLoadMatch(JokeLoadMatchRequired, total=False):
     joke: str
     punchline: str
     setup: str

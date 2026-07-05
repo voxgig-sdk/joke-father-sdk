@@ -16,10 +16,9 @@ type Joke struct {
 	Setup *string `json:"setup,omitempty"`
 }
 
-// JokeLoadMatch mirrors the joke fields as an all-optional match
-// filter (Go analog of Partial<Joke>).
+// JokeLoadMatch is the typed request payload for Joke.LoadTyped.
 type JokeLoadMatch struct {
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	Joke *string `json:"joke,omitempty"`
 	Punchline *string `json:"punchline,omitempty"`
 	Setup *string `json:"setup,omitempty"`

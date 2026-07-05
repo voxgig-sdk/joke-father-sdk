@@ -13,6 +13,10 @@
 ---@field setup? string
 
 ---@class JokeLoadMatch
+---@field id string
+---@field joke? string
+---@field punchline? string
+---@field setup? string
 
 local M = {}
 

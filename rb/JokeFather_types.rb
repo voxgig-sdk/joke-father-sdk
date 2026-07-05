@@ -29,10 +29,10 @@ Joke = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Joke#load (any subset of Joke fields).
+# Request payload for Joke#load.
 #
 # @!attribute [rw] id
-#   @return [String, nil]
+#   @return [String]
 #
 # @!attribute [rw] joke
 #   @return [String, nil]

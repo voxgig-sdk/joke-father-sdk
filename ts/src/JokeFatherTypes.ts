@@ -12,5 +12,10 @@ export interface Joke {
   setup?: string
 }
 
-export type JokeLoadMatch = Partial<Joke>
+export interface JokeLoadMatch {
+  id: string
+  joke?: string
+  punchline?: string
+  setup?: string
+}
 

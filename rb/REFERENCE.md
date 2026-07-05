@@ -8,7 +8,7 @@ Complete API reference for the JokeFather Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'joke-father_sdk'
+require_relative 'JokeFather_sdk'
 
 client = JokeFatherSDK.new(options)
 ```
@@ -93,10 +93,10 @@ joke = client.Joke
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | Yes |  |
-| `joke` | ``$STRING`` | Yes |  |
-| `punchline` | ``$STRING`` | No |  |
-| `setup` | ``$STRING`` | No |  |
+| `id` | `String` | Yes |  |
+| `joke` | `String` | Yes |  |
+| `punchline` | `String` | No |  |
+| `setup` | `String` | No |  |
 
 ### Operations
 

@@ -8,7 +8,7 @@ Complete API reference for the JokeFather Python SDK.
 ### Constructor
 
 ```python
-from joke-father_sdk import JokeFatherSDK
+from jokefather_sdk import JokeFatherSDK
 
 client = JokeFatherSDK(options)
 ```
@@ -87,10 +87,10 @@ joke = client.Joke()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | Yes |  |
-| `joke` | ``$STRING`` | Yes |  |
-| `punchline` | ``$STRING`` | No |  |
-| `setup` | ``$STRING`` | No |  |
+| `id` | `str` | Yes |  |
+| `joke` | `str` | Yes |  |
+| `punchline` | `str` | No |  |
+| `setup` | `str` | No |  |
 
 ### Operations
 

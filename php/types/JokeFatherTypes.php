@@ -21,10 +21,10 @@ class Joke
     public ?string $setup = null;
 }
 
-/** Match filter for Joke#load (any subset of Joke fields). */
+/** Request payload for Joke#load. */
 class JokeLoadMatch
 {
-    public ?string $id = null;
+    public string $id;
     public ?string $joke = null;
     public ?string $punchline = null;
     public ?string $setup = null;
