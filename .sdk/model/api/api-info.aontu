@@ -15,9 +15,9 @@ main: {
           url: "https://jokefather.com"
         }
       ]
+      summary: "Joke Father provides a fun collection of dad jokes that are bound to elicit groans and laughter."
       title: "Joke Father"
       version: "1.0.0"
+      website: "https://jokefather.com"
     }
   }
-}
-

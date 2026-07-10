@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -220,14 +217,17 @@
           "url": "https://jokefather.com"
         },
         "description": "Joke Father provides a fun collection of dad jokes that are bound to elicit groans and laughter. Users can easily request a new joke with a simple button click or by pressing 'Return'.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://jokefather.com"
           }
         ],
+        "summary": "Joke Father provides a fun collection of dad jokes that are bound to elicit groans and laughter.",
         "title": "Joke Father",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://jokefather.com"
       },
       "option": {},
       "target": {
@@ -280,6 +280,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -330,6 +333,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
