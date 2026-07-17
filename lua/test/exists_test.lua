@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- JokeFather SDK exists test
 
 local sdk = require("joke-father_sdk")
 

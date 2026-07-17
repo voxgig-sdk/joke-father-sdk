@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- JokeFather SDK configuration
 
 local function make_config()
   return {
