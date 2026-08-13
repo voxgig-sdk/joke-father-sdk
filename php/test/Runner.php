@@ -43,8 +43,8 @@ class JokeFatherTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('JOKEFATHER_TEST_LIVE');
-        $override = self::getenv('JOKEFATHER_TEST_OVERRIDE');
+        $live = self::getenv('JOKE_FATHER_TEST_LIVE');
+        $override = self::getenv('JOKE_FATHER_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class JokeFatherTestRunner
             }
         }
 
-        $explain = self::getenv('JOKEFATHER_TEST_EXPLAIN');
+        $explain = self::getenv('JOKE_FATHER_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['JOKEFATHER_TEST_EXPLAIN'] = $explain;
+            $m['JOKE_FATHER_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

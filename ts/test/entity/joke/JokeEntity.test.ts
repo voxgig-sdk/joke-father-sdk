@@ -26,8 +26,8 @@ import {
 describe('JokeEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when JOKEFATHER_TEST_LIVE=TRUE.
-  afterEach(liveDelay('JOKEFATHER_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when JOKE_FATHER_TEST_LIVE=TRUE.
+  afterEach(liveDelay('JOKE_FATHER_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = JokeFatherSDK.test()
@@ -63,7 +63,7 @@ describe('JokeEntity', async () => {
     const joke_ref01_ent = client.Joke()
     const joke_ref01_match_dt0: any = {}
     joke_ref01_match_dt0.id = joke_ref01_data.id
-    const joke_ref01_data_dt0 = await joke_ref01_ent.load(joke_ref01_match_dt0)
+    const joke_ref01_data_dt0 = (await joke_ref01_ent.load(joke_ref01_match_dt0)).data()
     assert(joke_ref01_data_dt0.id === joke_ref01_data.id)
 
 

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from jokefather_sdk.utility.voxgig_struct import voxgig_struct as vs
 from jokefather_sdk import JokeFatherSDK
-from core import helpers
+from jokefather_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _joke_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "JOKEFATHER_TEST_JOKE_ENTID": {},
-        "JOKEFATHER_TEST_LIVE": "FALSE",
+        "JOKE_FATHER_TEST_JOKE_ENTID": {},
+        "JOKE_FATHER_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("JOKEFATHER_TEST_LIVE") == "TRUE"
+    live = env.get("JOKE_FATHER_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

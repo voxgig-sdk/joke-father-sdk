@@ -17,5 +17,11 @@ export interface JokeLoadMatch {
   joke?: string
   punchline?: string
   setup?: string
+
+  // Selects a custom action instead of the plain load:
+  //   'random'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 

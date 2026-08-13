@@ -68,6 +68,7 @@ class JokeFatherConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/jokes/random',
                   'parts' => [

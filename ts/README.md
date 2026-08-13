@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = JokeFatherSDK.test()
 
 const joke = await client.Joke().load({ id: 'test01' })
-// joke is a bare entity populated with mock response data
+// joke is the entity, populated with mock response data
+// — call joke.data() for the record itself
 console.log(joke)
 ```
 
