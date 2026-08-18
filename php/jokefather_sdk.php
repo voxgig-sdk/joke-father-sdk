@@ -40,7 +40,7 @@ class JokeFatherSDK
         $utility = new JokeFatherUtility();
         $this->_utility = $utility;
 
-        $config = JokeFatherConfig::make_config();
+        $config = JokeFatherConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

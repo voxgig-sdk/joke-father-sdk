@@ -28,7 +28,7 @@ class JokeFatherSDK
     utility = JokeFatherUtility.new
     @_utility = utility
 
-    config = JokeFatherConfig.make_config
+    config = JokeFatherConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
