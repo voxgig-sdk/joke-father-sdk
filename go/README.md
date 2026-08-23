@@ -6,7 +6,7 @@ The Golang SDK for the JokeFather API — an entity-oriented client using standa
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Joke(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,10 +258,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"id"` |  |
-| `"joke"` |  |
-| `"punchline"` |  |
-| `"setup"` |  |
+| `"id"` | Unique identifier for the joke |
+| `"joke"` | The complete joke text |
+| `"punchline"` | The punchline/answer part of the joke |
+| `"setup"` | The setup/question part of the joke |
 
 Operations: Load.
 
@@ -286,10 +286,10 @@ Create an instance: `joke := client.Joke(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `string` |  |
-| `joke` | `string` |  |
-| `punchline` | `string` |  |
-| `setup` | `string` |  |
+| `id` | `string` | Unique identifier for the joke |
+| `joke` | `string` | The complete joke text |
+| `punchline` | `string` | The punchline/answer part of the joke |
+| `setup` | `string` | The setup/question part of the joke |
 
 #### Example: Load
 

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "JokeFather",
+			"slug": "joke-father",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,19 +37,23 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Unique identifier for the joke",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "joke",
 						"req": true,
+						"short": "The complete joke text",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "punchline",
+						"short": "The punchline/answer part of the joke",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "setup",
+						"short": "The setup/question part of the joke",
 						"type": "`$STRING`",
 					},
 				},

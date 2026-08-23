@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "JokeFather",
+      slug = "joke-father",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -30,19 +33,23 @@ local function make_config()
           {
             ["name"] = "id",
             ["req"] = true,
+            ["short"] = "Unique identifier for the joke",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "joke",
             ["req"] = true,
+            ["short"] = "The complete joke text",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "punchline",
+            ["short"] = "The punchline/answer part of the joke",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "setup",
+            ["short"] = "The setup/question part of the joke",
             ["type"] = "`$STRING`",
           },
         },

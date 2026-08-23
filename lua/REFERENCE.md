@@ -90,10 +90,10 @@ local joke = client:Joke(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `string` | Yes |  |
-| `joke` | `string` | Yes |  |
-| `punchline` | `string` | No |  |
-| `setup` | `string` | No |  |
+| `id` | `string` | Yes | Unique identifier for the joke |
+| `joke` | `string` | Yes | The complete joke text |
+| `punchline` | `string` | No | The punchline/answer part of the joke |
+| `setup` | `string` | No | The setup/question part of the joke |
 
 ### Operations
 

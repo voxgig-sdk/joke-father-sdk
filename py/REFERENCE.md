@@ -87,10 +87,10 @@ joke = client.Joke()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `str` | Yes |  |
-| `joke` | `str` | Yes |  |
-| `punchline` | `str` | No |  |
-| `setup` | `str` | No |  |
+| `id` | `str` | Yes | Unique identifier for the joke |
+| `joke` | `str` | Yes | The complete joke text |
+| `punchline` | `str` | No | The punchline/answer part of the joke |
+| `setup` | `str` | No | The setup/question part of the joke |
 
 ### Operations
 

@@ -238,10 +238,10 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `joke` |  |
-| `punchline` |  |
-| `setup` |  |
+| `id` | Unique identifier for the joke |
+| `joke` | The complete joke text |
+| `punchline` | The punchline/answer part of the joke |
+| `setup` | The setup/question part of the joke |
 
 Operations: Load.
 
@@ -266,10 +266,10 @@ Create an instance: `joke = client.Joke`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `String` |  |
-| `joke` | `String` |  |
-| `punchline` | `String` |  |
-| `setup` | `String` |  |
+| `id` | `String` | Unique identifier for the joke |
+| `joke` | `String` | The complete joke text |
+| `punchline` | `String` | The punchline/answer part of the joke |
+| `setup` | `String` | The setup/question part of the joke |
 
 #### Example: Load
 

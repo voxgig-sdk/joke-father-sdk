@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "JokeFather",
+            "slug": "joke-father",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,19 +54,23 @@ def make_config():
           {
             "name": "id",
             "req": True,
+            "short": "Unique identifier for the joke",
             "type": "`$STRING`",
           },
           {
             "name": "joke",
             "req": True,
+            "short": "The complete joke text",
             "type": "`$STRING`",
           },
           {
             "name": "punchline",
+            "short": "The punchline/answer part of the joke",
             "type": "`$STRING`",
           },
           {
             "name": "setup",
+            "short": "The setup/question part of the joke",
             "type": "`$STRING`",
           },
         ],

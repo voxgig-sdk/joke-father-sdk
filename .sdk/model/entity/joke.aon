@@ -8,21 +8,25 @@ main: kit: entity: joke: {
     {
       name: "id"
       req: true
+      short: "Unique identifier for the joke"
       type: "`$STRING`"
     }
     {
       name: "joke"
       req: true
+      short: "The complete joke text"
       type: "`$STRING`"
     }
     {
       name: "punchline"
       req: false
+      short: "The punchline/answer part of the joke"
       type: "`$STRING`"
     }
     {
       name: "setup"
       req: false
+      short: "The setup/question part of the joke"
       type: "`$STRING`"
     }
   ]

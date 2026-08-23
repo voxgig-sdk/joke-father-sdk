@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'JokeFather',
+        slug: "joke-father",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -57,19 +68,23 @@ class Config {
         {
           "name": "id",
           "req": true,
+          "short": "Unique identifier for the joke",
           "type": "`$STRING`"
         },
         {
           "name": "joke",
           "req": true,
+          "short": "The complete joke text",
           "type": "`$STRING`"
         },
         {
           "name": "punchline",
+          "short": "The punchline/answer part of the joke",
           "type": "`$STRING`"
         },
         {
           "name": "setup",
+          "short": "The setup/question part of the joke",
           "type": "`$STRING`"
         }
       ],

@@ -225,10 +225,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `joke` |  |
-| `punchline` |  |
-| `setup` |  |
+| `id` | Unique identifier for the joke |
+| `joke` | The complete joke text |
+| `punchline` | The punchline/answer part of the joke |
+| `setup` | The setup/question part of the joke |
 
 Operations: Load.
 
@@ -253,10 +253,10 @@ Create an instance: `local joke = client:Joke(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `string` |  |
-| `joke` | `string` |  |
-| `punchline` | `string` |  |
-| `setup` | `string` |  |
+| `id` | `string` | Unique identifier for the joke |
+| `joke` | `string` | The complete joke text |
+| `punchline` | `string` | The punchline/answer part of the joke |
+| `setup` | `string` | The setup/question part of the joke |
 
 #### Example: Load
 
