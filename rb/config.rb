@@ -28,6 +28,7 @@ module JokeFatherConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
