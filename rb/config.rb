@@ -66,6 +66,10 @@ module JokeFatherConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "joke",
           "op" => {
             "load" => {
@@ -77,10 +81,16 @@ module JokeFatherConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/jokes/random",
-                  "parts" => [
-                    "api",
-                    "jokes",
-                    "random",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "jokes",
+                    },
+                    {
+                      "lit" => "random",
+                    },
                   ],
                   "select" => {
                     "$action" => "random",
@@ -89,6 +99,11 @@ module JokeFatherConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "jokes",
+                    "random",
+                  ],
                 },
               ],
             },

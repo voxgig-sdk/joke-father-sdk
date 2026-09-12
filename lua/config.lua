@@ -54,6 +54,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "joke",
         ["op"] = {
           ["load"] = {
@@ -65,10 +69,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/jokes/random",
-                ["parts"] = {
-                  "api",
-                  "jokes",
-                  "random",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "jokes",
+                  },
+                  {
+                    ["lit"] = "random",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "random",
@@ -76,6 +86,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "jokes",
+                  "random",
                 },
               },
             },

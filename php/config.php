@@ -80,6 +80,10 @@ class JokeFatherConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'joke',
           'op' => [
             'load' => [
@@ -91,10 +95,16 @@ class JokeFatherConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/jokes/random',
-                  'parts' => [
-                    'api',
-                    'jokes',
-                    'random',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'jokes',
+                    ],
+                    [
+                      'lit' => 'random',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'random',
@@ -102,6 +112,11 @@ class JokeFatherConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'jokes',
+                    'random',
                   ],
                 ],
               ],

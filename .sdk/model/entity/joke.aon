@@ -44,10 +44,16 @@ main: kit: entity: joke: {
         {
           method: "GET"
           orig: "/api/jokes/random"
-          parts: [
-            "api"
-            "jokes"
-            "random"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "jokes"
+            }
+            {
+              lit: "random"
+            }
           ]
           select: {
             "$action": "random"
