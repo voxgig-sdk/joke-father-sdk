@@ -105,7 +105,7 @@ local result, err = client:Joke():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
+| TypeScript | `@voxgig-sdk/joke-father-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
 | Python | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
 | PHP | `voxgig-sdk/joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/joke-father-sdk/go` | `go get github.com/voxgig-sdk/joke-father-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Joke():load({ id = "test01" })
 ### TypeScript
 
 ```ts
-import { JokeFatherSDK } from '@voxgig-sdk/joke-father'
+import { JokeFatherSDK } from '@voxgig-sdk/joke-father-sdk'
 
 const client = new JokeFatherSDK()
 

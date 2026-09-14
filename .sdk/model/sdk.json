@@ -815,7 +815,7 @@
             "registry": {
               "active": false,
               "name": "npm",
-              "package": "",
+              "package": "@voxgig-sdk/joke-father-sdk",
               "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {

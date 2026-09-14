@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/joke-father",
+  "name": "@voxgig-sdk/joke-father-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Joke Father public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [
