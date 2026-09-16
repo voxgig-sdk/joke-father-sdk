@@ -1,12 +1,18 @@
 # JokeFather SDK feature factory
 
 from jokefather_sdk.feature.base_feature import JokeFatherBaseFeature
+from jokefather_sdk.feature.ratelimit_feature import JokeFatherRatelimitFeature
+from jokefather_sdk.feature.retry_feature import JokeFatherRetryFeature
 from jokefather_sdk.feature.test_feature import JokeFatherTestFeature
+from jokefather_sdk.feature.timeout_feature import JokeFatherTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: JokeFatherBaseFeature(),
+    "ratelimit": lambda: JokeFatherRatelimitFeature(),
+    "retry": lambda: JokeFatherRetryFeature(),
     "test": lambda: JokeFatherTestFeature(),
+    "timeout": lambda: JokeFatherTimeoutFeature(),
 }
 
 

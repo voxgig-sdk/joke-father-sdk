@@ -1,7 +1,10 @@
 # JokeFather SDK feature factory
 
 require_relative 'feature/base_feature'
+require_relative 'feature/ratelimit_feature'
+require_relative 'feature/retry_feature'
 require_relative 'feature/test_feature'
+require_relative 'feature/timeout_feature'
 
 
 module JokeFatherFeatures
@@ -9,8 +12,14 @@ module JokeFatherFeatures
     case name
     when "base"
       JokeFatherBaseFeature.new
+    when "ratelimit"
+      JokeFatherRatelimitFeature.new
+    when "retry"
+      JokeFatherRetryFeature.new
     when "test"
       JokeFatherTestFeature.new
+    when "timeout"
+      JokeFatherTimeoutFeature.new
     else
       JokeFatherBaseFeature.new
     end

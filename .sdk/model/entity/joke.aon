@@ -42,6 +42,12 @@ main: kit: entity: joke: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /api/jokes/random"
+            json: "{\"operationId\":\"getRandomJoke\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"examples\":{\"joke\":{\"value\":{\"id\":\"01JN5DCA8DDRQGW2MZ8DCEPHYE\",\"joke\":\"Why don't scientists trust atoms? Because they make up everything!\",\"punchline\":\"Because they make up everything!\",\"setup\":\"Why don't scientists trust atoms?\"}}},\"schema\":{\"properties\":{\"id\":{\"description\":\"Unique identifier for the joke\",\"example\":\"01JN5DCA8DDRQGW2MZ8DCEPHYE\",\"type\":\"string\"},\"joke\":{\"description\":\"The complete joke text\",\"example\":\"Why don't scientists trust atoms? Because they make up everything!\",\"type\":\"string\"},\"punchline\":{\"description\":\"The punchline/answer part of the joke\",\"example\":\"Because they make up everything!\",\"type\":\"string\"},\"setup\":{\"description\":\"The setup/question part of the joke\",\"example\":\"Why don't scientists trust atoms?\",\"type\":\"string\"}},\"required\":[\"id\",\"joke\"],\"type\":\"object\"}}},\"description\":\"Successfully retrieved a random joke\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/api/jokes/random"
           segments: [

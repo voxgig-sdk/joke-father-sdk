@@ -4,7 +4,10 @@ declare(strict_types=1);
 // JokeFather SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class JokeFatherFeatures
@@ -14,8 +17,14 @@ class JokeFatherFeatures
         switch ($name) {
             case "base":
                 return new JokeFatherBaseFeature();
+            case "ratelimit":
+                return new JokeFatherRatelimitFeature();
+            case "retry":
+                return new JokeFatherRetryFeature();
             case "test":
                 return new JokeFatherTestFeature();
+            case "timeout":
+                return new JokeFatherTimeoutFeature();
             default:
                 return new JokeFatherBaseFeature();
         }
@@ -31,7 +40,10 @@ class JokeFatherFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
