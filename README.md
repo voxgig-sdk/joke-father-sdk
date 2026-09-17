@@ -105,12 +105,12 @@ local result, err = client:Joke():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/joke-father-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
-| Python | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
-| PHP | `voxgig-sdk/joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
+| TypeScript | `@voxgig-sdk/joke-father-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/tags) |
+| Python | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/tags) |
+| PHP | `voxgig-sdk/joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/joke-father-sdk/go` | `go get github.com/voxgig-sdk/joke-father-sdk/go@latest` |
-| Ruby | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
-| Lua | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/releases) |
+| Ruby | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/tags) |
+| Lua | `voxgig-sdk-joke-father` | publish pending — [install from git tag](https://github.com/voxgig-sdk/joke-father-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/joke-father-sdk/go-cli` | `go install github.com/voxgig-sdk/joke-father-sdk/go-cli/cmd/joke-father@latest` |
 | Go MCP server | `github.com/voxgig-sdk/joke-father-sdk/go-mcp` | `go get github.com/voxgig-sdk/joke-father-sdk/go-mcp@latest` |
 
