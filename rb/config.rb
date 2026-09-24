@@ -99,25 +99,29 @@ module JokeFatherConfig
           "fields" => [
             {
               "name" => "id",
+              "title" => "Id",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the joke",
-              "type" => "`$STRING`",
             },
             {
               "name" => "joke",
+              "title" => "Joke",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The complete joke text",
-              "type" => "`$STRING`",
             },
             {
               "name" => "punchline",
-              "short" => "The punchline/answer part of the joke",
+              "title" => "Punchline",
               "type" => "`$STRING`",
+              "short" => "The punchline/answer part of the joke",
             },
             {
               "name" => "setup",
-              "short" => "The setup/question part of the joke",
+              "title" => "Setup",
               "type" => "`$STRING`",
+              "short" => "The setup/question part of the joke",
             },
           ],
           "id" => {
@@ -131,7 +135,6 @@ module JokeFatherConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/jokes/random",
@@ -146,18 +149,20 @@ module JokeFatherConfig
                       "lit" => "random",
                     },
                   ],
-                  "select" => {
-                    "$action" => "random",
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "jokes",
                     "random",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {
+                    "$action" => "random",
+                  },
                 },
               ],
             },

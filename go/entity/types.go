@@ -1,7 +1,7 @@
 // Typed models for the JokeFather SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,10 +14,6 @@ import (
 
 // Joke is the typed data model for the joke entity.
 type Joke struct {
-	Id string `json:"id"`
-	Joke string `json:"joke"`
-	Punchline *string `json:"punchline,omitempty"`
-	Setup *string `json:"setup,omitempty"`
 }
 
 // JokeLoadMatch is the typed request payload for Joke.LoadTyped.

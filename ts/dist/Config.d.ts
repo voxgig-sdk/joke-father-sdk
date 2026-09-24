@@ -76,13 +76,15 @@ declare class Config {
         joke: {
             fields: ({
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
             } | {
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
                 req?: undefined;
             })[];
             id: {
@@ -95,21 +97,22 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {};
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            $action: string;
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {};
+                        select: {
+                            $action: string;
+                        };
                     }[];
                 };
             };
