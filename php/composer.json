@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/joke-father",
+  "name": "voxgig-sdk/joke-father-sdk",
   "description": "Unofficial generated PHP SDK for the Joke Father public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "joke-father"],
