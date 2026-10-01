@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 JokeFatherUtility::setRegistrar(function (JokeFatherUtility $u): void {
     $u->clean = [JokeFatherClean::class, 'call'];
+    $u->clean_add = [JokeFatherClean::class, 'add'];
+    $u->clean_explain = [JokeFatherDone::class, 'clean_explain'];
     $u->done = [JokeFatherDone::class, 'call'];
     $u->make_error = [JokeFatherMakeError::class, 'call'];
     $u->feature_add = [JokeFatherFeatureAdd::class, 'call'];

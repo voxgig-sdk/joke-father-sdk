@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 JokeFatherUtility.registrar = ->(u) {
   u.clean = JokeFatherUtilities::Clean
+  u.clean_add = JokeFatherUtilities::CleanAdd
+  u.clean_explain = JokeFatherUtilities::CleanExplain
   u.done = JokeFatherUtilities::Done
   u.make_error = JokeFatherUtilities::MakeError
   u.feature_add = JokeFatherUtilities::FeatureAdd
