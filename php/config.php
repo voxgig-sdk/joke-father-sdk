@@ -93,6 +93,7 @@ class JokeFatherConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -176,6 +177,10 @@ class JokeFatherConfig
                   'args' => [],
                   'select' => [
                     '$action' => 'random',
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

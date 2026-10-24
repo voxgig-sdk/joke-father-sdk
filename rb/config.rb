@@ -79,6 +79,7 @@ module JokeFatherConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -162,6 +163,10 @@ module JokeFatherConfig
                   "args" => {},
                   "select" => {
                     "$action" => "random",
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

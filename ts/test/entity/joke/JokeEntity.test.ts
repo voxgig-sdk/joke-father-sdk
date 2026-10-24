@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { JokeFatherSDK, BaseFeature, stdutil } from '../../..'
+import { JokeFatherSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('JokeEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = JokeFatherSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Joke().load({"id":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.JOKE_FATHER_TEST_LIVE
@@ -51,7 +63,7 @@ describe('JokeEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"id":{"a":true,"h":"Id","n":"id","r":true,"sh":"Unique identifier for the joke","t":"`$STRING`","key$":"id","index$":0},"joke":{"a":true,"h":"Joke","n":"joke","r":true,"sh":"The complete joke text","t":"`$STRING`","key$":"joke","index$":1},"punchline":{"a":true,"h":"Punchline","n":"punchline","r":false,"sh":"The punchline/answer part of the joke","t":"`$STRING`","key$":"punchline","index$":2},"setup":{"a":true,"h":"Setup","n":"setup","r":false,"sh":"The setup/question part of the joke","t":"`$STRING`","key$":"setup","index$":3}},"id":{"field":"id","name":"id"},"name":"joke","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /api/jokes/random","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/api/jokes/random","q":{"$action":"random"},"r":{},"s":[{"lit":"api"},{"lit":"jokes"},{"lit":"random"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"joke","name__orig":"joke","Name":"Joke","name_":"joke","name-":"joke","NAME":"JOKE","index$":0}, {"active":true,"entity":"joke","key$":"BasicJokeFlow","kind":"basic","name":"BasicJokeFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"joke_ref01","srcdatavar":"joke_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-joke_ref01"}}],"index$":0}]}, 'Joke', {"GET /api/jokes/random":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"id":{"a":true,"h":"Id","n":"id","r":true,"sh":"Unique identifier for the joke","t":"`$STRING`","key$":"id","index$":0},"joke":{"a":true,"h":"Joke","n":"joke","r":true,"sh":"The complete joke text","t":"`$STRING`","key$":"joke","index$":1},"punchline":{"a":true,"h":"Punchline","n":"punchline","r":false,"sh":"The punchline/answer part of the joke","t":"`$STRING`","key$":"punchline","index$":2},"setup":{"a":true,"h":"Setup","n":"setup","r":false,"sh":"The setup/question part of the joke","t":"`$STRING`","key$":"setup","index$":3}},"id":{"field":"id","name":"id"},"name":"joke","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /api/jokes/random","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/api/jokes/random","q":{"$action":"random"},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"api"},{"lit":"jokes"},{"lit":"random"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"joke","name__orig":"joke","Name":"Joke","name_":"joke","name-":"joke","NAME":"JOKE","index$":0}, {"active":true,"entity":"joke","key$":"BasicJokeFlow","kind":"basic","name":"BasicJokeFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"joke_ref01","srcdatavar":"joke_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-joke_ref01"}}],"index$":0}]}, 'Joke', {"GET /api/jokes/random":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -73,6 +85,12 @@ describe('JokeEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

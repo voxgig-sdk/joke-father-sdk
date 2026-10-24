@@ -3,11 +3,16 @@ declare(strict_types=1);
 
 // JokeFather SDK utility: prepare_body
 
+require_once __DIR__ . '/Media.php';
+
 class JokeFatherPrepareBody
 {
     public static function call(JokeFatherContext $ctx): mixed
     {
         if ($ctx->op->input === 'data') {
+            if (JokeFatherMedia::isRawRequest($ctx->point)) {
+                return JokeFatherMedia::rawBody($ctx->reqdata);
+            }
             $body = ($ctx->utility->transform_request)($ctx);
             // PHP cannot tell an empty map from an empty list, and this
             // vendored struct answers [] where the canonical transform

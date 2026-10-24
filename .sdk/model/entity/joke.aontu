@@ -56,6 +56,10 @@ main: kit: entity: joke: {
           q: {
             "$action": "random"
           }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "api"
